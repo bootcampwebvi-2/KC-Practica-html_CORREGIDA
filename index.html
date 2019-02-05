@@ -17,11 +17,23 @@
 <body>
     <div class="top-wrapper">
         <header>
-            <h1 class="h1-main">Juan Marcos Marin</h1>
+            <h1>Juan Marcos Marin</h1>
         </header>
         <nav class="menu-icon">
-            <a id="menu-btn-1" class="fas fa-bars" href="#menu-bottom"></a>
-            <a id="menu-btn-2" class="fas fa-times hide" href="#menu-bottom"></a>
+            <a class="fas fa-bars" href="#menu-bottom"></a>
+            <a class="fas fa-times hide" href="#menu-bottom"></a>
+        </nav>
+        <!-- CAMBIAR PARA CUANDO SE HAGA CLIC EN EL ICONO DE LAS BARRAS APAREZCA -->
+        <nav id="menu-bottom" class="menu-bottom content-wrapper">
+            <ul>
+                <li><a href="./index.html#home">Home</a></li> 
+                <li><a href="./index.html#quiensoy">Quien soy</a></li>
+                <li><a href="./index.html#estudios">Estudios</a></li>
+                <li><a href="./index.html#experiencia">Experiencia</a></li>
+                <li><a href="./sobremi.html">Sobre mi</a></li>
+                <li><a href="./index.html#contacto">Contacto</a></li>  
+            </ul>
+        <!-- CAMBIAR PARA CUANDO SE HAGA CLIC EN EL ICONO DE LAS BARRAS APAREZCA --> 
         </nav>
         <nav id="menu-top" class="menu-top hide">
             <ul>
@@ -37,20 +49,20 @@
     <section id="home"> 
         <header>
             <div class="title-wrapper">
-                <h1 class="h1-section">Web CV</h1>
+                <h1>Web CV</h1>
             </div>
         </header>
         <div class="content-wrapper">
             <article>
                 <h2>Bienvenidos a mi Web</h2>
-                <h4>Podrán encontrar mas detalles sobre mi persona.</h4>
+                <h4>Podrán encontrar mas detalles sobre mi.</h4>
             </article>
         </div>
     </section>
     <section id="quiensoy">
             <header>
                 <div class="title-wrapper">
-                    <h1 class="h1-section">Quien Soy</h1>
+                    <h1>Quien Soy</h1>
                 </div>
             </header>
             <div class="content-wrapper">
@@ -64,7 +76,7 @@
         <section id="estudios">
                 <header>
             <div class="title-wrapper">
-                        <h1 class="h1-section">Estudios</h1>
+                        <h1>Estudios</h1>
             </div>
                 </header>
             <div class="content-wrapper">
@@ -129,7 +141,7 @@
         <section id="experiencia">
                 <header>
                     <div class="title-wrapper">
-                        <h1 class="h1-section">Experiencia</h1>
+                        <h1>Experiencia</h1>
                     </div>
                 </header>
                 <div class="content-wrapper">
@@ -160,12 +172,12 @@
     <section id="contacto">
         <header>
             <div class="title-wrapper">
-                <h1 class="h1-section">Contacto</h1>
+                <h1>Contacto</h1>
                 <p>Desea contactar conmigo?</p>
             </div>
         </header>
         <div class="content-wrapper">
-            <p> Estare encantado de poder atenderle.</p>
+            <p>Estare encantado de atenderle.</p>
             <form action="" id="contacto">
                 <ul>
                     <li class="form-group">
@@ -182,25 +194,16 @@
                     </li>
                     <li class="form-group">
                         <label  for="message">Como nos has conocido</label>
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje (Máximo 150 palabras)"></textarea>
                     </li>
                     <li>
-                        <input type="checkbox" name="condiciones" id="condiciones">
-                        <label for="condiciones">Acepto las condiciones </label>
-                    </li>
-                    <li>
-                        <legend>Opciones</legend>
-                        <label for="opciones1">Opcion 1</label>
-                        <input type="radio" name="opciones" id="opciones1" value="opcion1">
-                        <label for="opciones2">Opcion 2</label>
-                        <input type="radio" name="opciones" id="opciones2" value="opcion2">
-                    </li>
-                    <li>
-                        <label for="selection">Selection</label>
+                        <label for="selection">Selección</label>
                         <select name="selection" id="selection">
-                            <option value="op1">Opción 1</option>
-                            <option value="op2">Opción 2</option>
-                            <option value="op3">Opción 3</option>
+                            <option value="op1">LinkedIn</option>
+                            <option value="op2">GitHub</option>
+                            <option value="op3">Facebook</option>
+                            <option value="op4">Website</option>
+                            <option value="op5">Otros</option>
                         </select>
                     </li>
                 </ul>
@@ -208,6 +211,7 @@
             </form>
         </div>
     </section>
+<!-- ver mejor!!!    
     <nav id="menu-bottom" class="menu-bottom content-wrapper">
         <ul>
             <li><a href="./index.html#home">Home</a></li> 
@@ -218,6 +222,7 @@
             <li><a href="./index.html#contacto">Contacto</a></li>  
         </ul>
     </nav>
+  --> 
     <footer>
         <nav>
             <ul>
@@ -238,7 +243,7 @@
             </a></li>
             </ul>
         </nav>
-        <p><small>Copyright © Your Website 2018</small></p>
+        <p><small><strong>Copyright © Your Website 2018</strong></small></p>
     </footer>
 </body>
 </html>

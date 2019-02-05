@@ -1,4 +1,4 @@
-/*  Variables */
+/*  Variables Globales */
 :root {
     --color-texto: black;
     --color-fondo: white; 
@@ -6,7 +6,7 @@
     --color-autores: lightblue;
     --color-activo: cyan; 
 }
-/* Elementos genéricos */
+/* Elementos Genéricos */
 body { 
     background-color: #05FFEE;
     color: var(--color-texto);
@@ -14,25 +14,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 .hide {
-    display: none;
+     display: none; 
 }
-.top-wrapper header h1 { font-size: 1.25rem;}
-section h1 {font-size: 5rem;}
-section#full_post  h1 {font-size: 3.5rem;}
-/* Solo los articulos de Home tienen h2*/
-article h2 { 
-    font-size: 2.25rem
+.top-wrapper header h1 { 
+    font-size: 1.25rem;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-}
-article p:nth-of-type(1) {
-     font-size: 1.1rem;
-}
-article p {
-font-family: 'Open Sans', sans-serif;  
-}
-/* Elementos iniciales: Header y Nav */
+/* Elementos Iniciales: Header y Nav */
 .top-wrapper header {
     top: 1rem;
     left: 20%; 
@@ -47,6 +34,13 @@ font-family: 'Open Sans', sans-serif;
         .menu-top
     .menu-bottom
 */
+section h1 {
+    font-size: 5rem;
+}
+/* Solo los articulos de Home tienen h2*/
+article h2 { 
+    font-size: 2.25rem
+}
 nav a {
     display: block;
     padding: .5rem 1rem;
@@ -60,28 +54,25 @@ nav a {
     z-index: 1; 
 }
 nav.menu-icon {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    cursor: pointer;
     right: 20%;
     top: 1rem;
-    font-weight: 800;
+    /* font-weight: 800; */
 }
-nav.menu-top {
+/*nav.menu-top {
     font-size: 1rem;
     left: 2%;
     top: 3rem;
     font-weight: 800;  
-    color: var(--color-autores);
-    background-color: var(--color-fondo);
+    color: pink; var(--color-autores);
+    background-color: var(--color-fondo); 
     width: 100%;
-}
+}*/
 nav.menu-bottom {
-    background-color: var(--color-autores)
+    background-color: var(--color-autores);
+    background-size: cover; 
 }
-/* Menu de Iconos sociales */
-footer nav li {
-    display: inline-block;
-}
-
 /* SECCIONES */ 
 /* HEADER interno con IMAGEN DE FONDO */
 section header {
@@ -93,7 +84,9 @@ section header {
     position: relative;
 }
 section#home header {
-    background-image: url('../assets/home-bg.jpg')
+    margin-left: -100px;    
+    background-position: left;
+    background-image: url('../assets/home-bg.jpg'); 
 }
 section#quiensoy header{
     background-image: url('../assets/quiensoy.jpg');
@@ -108,6 +101,7 @@ section#sobremi header{
     background-image: url('../assets/sobremi.jpg');
 }
 section#contacto header{
+    color: black;
     background-image: url('../assets/contacto.jpg'); 
 }
 section .title-wrapper {
@@ -128,31 +122,29 @@ section header::after {
     background-color: var(--color-texto);
     opacity: 0; 
 }
-section .content-wrapper, nav.content-wrapper {
+section .content-wrapper /*, nav.content-wrapper */ {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
 }
-
-/* Botones */
-section .boton-wrapper {
+/* section .boton-wrapper {
     margin: 1rem;
     display:flex;
-    flex-direction: row-reverse;
-}
+    flex-direction: row-reverse; 
+} */
+/* BOTONES */
 section .boton {
     display: block;
     color: var(--color-fondo);
     background-color: var(--color-boton);
-    font-size: 14px;
+    font-size: 1.2rem;
     font-weight: 800;
     padding: 15px 25px;
     letter-spacing: 1px;
-    border-radius: 0;
-    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif; 
+    border-radius: 10px;
+    font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial','sans-serif'; 
 }
-
 /* Section HOME */
 section#home header h1 {
     font-size: 0.2rem;
@@ -160,8 +152,7 @@ section#home header h1 {
     display: inline-block;
     animation: titulo 3s linear;
     animation-fill-mode: forwards;
-}
-
+} 
 @keyframes titulo {
     0% {
       transform: scale(0);
@@ -193,66 +184,33 @@ section#home article {
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-autores)
 }
-section#home article>p{
-    font-size: 1.75rem;
-    margin-top: 1rem;
-}
-section#home footer {
-   font-size: 1,12rem;
-   font-style: italic;
-   padding-bottom: 1rem; 
-}
-section#home footer .autor {
-    color: var(--color-autores);
-    font-weight: 900;
-}
-
-/* Section SOBRE MI*/
-section#about p {
-    line-height: 1.5;
-    margin: 1.8rem 0; 
-}
-
 /* Section CONTACTO */
-section#contact p {
+section#contacto p {
     line-height: 1.5;
     margin: 1.8rem 0; 
+    text-align: center;
 }
-section#contact ul {
+section#contacto ul {
     margin-bottom: 1rem;
 }
-section#contact li {
+section#contacto li {
     padding-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-autores);   
 }
-section#contact li.form-group label {
+section#contacto li.form-group label {
     display: none;
 }
-section#contact li.form-group input, 
-section#contact li.form-group textarea {
+/* ...CUIDADO CAMBIAR PARA 150 PALABRAS Y VERIFICACION EMAIL... */
+section#contacto li.form-group input, 
+section#contacto li.form-group textarea {
     width: 100%;
     border: 0px solid;
     font-size: 1.5rem;
-    font-family: 'Lora', serif;
-    color:  var(--color-autores);
+    font-family: 'Open Sans', 'calibri', 'Lora';
+    color:  var(--color-texto);
 }
-
-/* POST FULL*/
-section#full_post h1, section#full_post p, section#full_post footer {
-    text-align: left;
-    margin-bottom: 1rem;
-}
-figure.imagen {
-    width: 40%;
-    float: right;
-}
-div.columnas {
-    column-count: 2;
-    column-gap: 2rem;
-}
-
-/* Footer*/
+/* FOOTER - Menu de Iconos sociales */
 body>footer {
     margin-top: 2rem;
     border-top: 1px solid var(--color-autores);
@@ -262,12 +220,14 @@ body>footer {
 body>footer nav {
     font-size: .8rem;
 }
+footer nav li {
+    display: inline-block;
+}
 body>footer small {
     color: var(--color-autores);
 }
-
-@media screen and (min-width: 900px) 
-{
+/* Responsive para elementos mayores que 768px de ancho */ 
+@media screen and (min-width: 768px) {
     .hide {
         display: initial;
     }
@@ -282,13 +242,14 @@ body>footer small {
         right: 0;
         justify-content: space-around;
         align-items: baseline;
-        color: var(--color-fondo);
-        background-color: #0d1018;
+        color: var(--color-fondo); 
+        background-color: #1d2e5c;
     }
-    /* flex items */
+    /* Flex items */
     .top-wrapper header {
         position: static;
-        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-top: 1.2rem;
         padding-bottom: 1rem;
     }
     nav.menu-top {
@@ -312,4 +273,3 @@ body>footer small {
         color: var(--color-activo);
     }
 }
-
