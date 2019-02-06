@@ -8,7 +8,7 @@ export class Menu {
         // Otros
         this.aMenuItems = document.querySelectorAll("nav#menu-top a")
         this.aSections = document.querySelectorAll("section")
-        /* CODIGO VERIFICACION */ console.dir(this.aSections)
+         /* CODIGO VERIFICACION >>> */ console.dir(this.aSections)
         this.oOffsets = []
         // Manejadores de eventos
         this.oBotonMenu1.addEventListener('click', this.toggleMenu.bind(this))
@@ -47,14 +47,18 @@ export class Menu {
     changeMenuStyle () {
         let pageOffset = window.pageYOffset
         let menuItem = 0
-        if (pageOffset >=  this.oOffsets['#home'] && pageOffset < this.oOffsets['#about']) {
+        if (pageOffset >=  this.oOffsets['#home'] && pageOffset < this.oOffsets['#quiensoy']) {
             menuItem = 0
-        } else if (pageOffset >= this.oOffsets['#about'] && pageOffset < this.oOffsets['#contact']) {
+        } else if (pageOffset >= this.oOffsets['#quiensoy'] && pageOffset < this.oOffsets['#estudios']) {
              menuItem = 1
-        } else {
+        } else if (pageOffset >= this.oOffsets['#estudios'] && pageOffset < this.oOffsets['#experiencia']) {
+            menuItem = 2
+        } else if (pageOffset >= this.oOffsets['#experiencia'] && pageOffset < this.oOffsets['#contacto']) {
             menuItem = 3
+        } else {
+            menuItem = 5
         }
-        this.aMenuItems.forEach(
+         this.aMenuItems.forEach(
             (item) => item.classList.remove('active')
         )
         this.aMenuItems[menuItem].classList.add('active')
@@ -68,7 +72,7 @@ export class Menu {
                 // this.oOffsets['#'+item.id] = item.offsetTop
             }
         )
-            /* CODIGO */ console.log(this.oOffsets) /* VERIFICACION */
+            /* CODIGO VERIFICACION >>> */ console.log(this.oOffsets)
     }
 
     cumulativeOffset (element) {

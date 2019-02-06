@@ -65,8 +65,8 @@ nav.menu-top {
     left: 2%;
     top: 3rem;
     font-weight: 800;  
-    color: pink; var(--color-autores);
-    background-color: var(--color-fondo); 
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
     width: 100%;
 }
 nav.menu-bottom {
