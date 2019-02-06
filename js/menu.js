@@ -8,6 +8,7 @@ export class Menu {
         // Otros
         this.aMenuItems = document.querySelectorAll("nav#menu-top a")
         this.aSections = document.querySelectorAll("section")
+        /* CODIGO VERIFICACION */ console.dir(this.aSections)
         this.oOffsets = []
         // Manejadores de eventos
         this.oBotonMenu1.addEventListener('click', this.toggleMenu.bind(this))
@@ -67,7 +68,7 @@ export class Menu {
                 // this.oOffsets['#'+item.id] = item.offsetTop
             }
         )
-    
+            /* CODIGO */ console.log(this.oOffsets) /* VERIFICACION */
     }
 
     cumulativeOffset (element) {

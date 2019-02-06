@@ -21,8 +21,8 @@ body {
 }
 /* Elementos Iniciales: Header y Nav */
 .top-wrapper header {
-    top: 1rem;
-    left: 20%; 
+    top: 1.25rem;
+    left: 10%; 
     width: 50%;
     color: var(--color-fondo);
     position: absolute;
@@ -50,8 +50,8 @@ nav a {
 }
 .top-wrapper nav {
     color: var(--color-fondo); 
-    position: absolute;
-    z-index: 1; 
+    position: absolute; 
+    z-index: 1;  
 }
 nav.menu-icon {
     font-size: 1.4rem;
@@ -60,7 +60,7 @@ nav.menu-icon {
     top: 1rem;
     /* font-weight: 800; */
 }
-/*nav.menu-top {
+nav.menu-top {
     font-size: 1rem;
     left: 2%;
     top: 3rem;
@@ -68,7 +68,7 @@ nav.menu-icon {
     color: pink; var(--color-autores);
     background-color: var(--color-fondo); 
     width: 100%;
-}*/
+}
 nav.menu-bottom {
     background-color: var(--color-autores);
     background-size: cover; 
@@ -112,7 +112,8 @@ section .title-wrapper {
     transform: translate(-50%, -50%); 
     text-align: center;
 }
-section header::after {
+/* OPACIDAD NO INCLUIDA por delante de las imagenes */ 
+/*  section header::after {
     content: "";
     position: absolute;
     top: 0;
@@ -120,19 +121,19 @@ section header::after {
     bottom: 0; 
     right: 0;
     background-color: var(--color-texto);
-    opacity: 0; 
-}
+    opacity: 0.1; 
+} */
 section .content-wrapper /*, nav.content-wrapper */ {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
-}
-/* section .boton-wrapper {
+} 
+section .boton-wrapper {
     margin: 1rem;
     display:flex;
     flex-direction: row-reverse; 
-} */
+} 
 /* BOTONES */
 section .boton {
     display: block;

@@ -18,7 +18,8 @@ export class Main {
 
         if (this.page === 'index.html') {
             new Index()
-        } else if (this.page === 'post1.html') {
+
+        } else if (this.page === 'sobremi.html') {
             new Page1()
         }
     }
