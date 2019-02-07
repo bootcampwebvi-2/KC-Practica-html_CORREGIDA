@@ -8,7 +8,7 @@ export class Menu {
         // Otros
         this.aMenuItems = document.querySelectorAll("nav#menu-top a")
         this.aSections = document.querySelectorAll("section")
-         /* CODIGO VERIFICACION >>> */ console.dir(this.aSections)
+/* CODIGO VERIFICACION >>> console.dir(this.aSections) */
         this.oOffsets = []
         // Manejadores de eventos
         this.oBotonMenu1.addEventListener('click', this.toggleMenu.bind(this))
@@ -70,10 +70,9 @@ export class Menu {
             (item) => {
                 let cumulative =  this.cumulativeOffset(item);
                 this.oOffsets['#'+item.id] = cumulative;
-                // this.oOffsets['#'+item.id] = item.offsetTop
             }
         )
-            /* CODIGO VERIFICACION >>> */ console.log(this.oOffsets)
+/* CODIGO VERIFICACION >>> console.log(this.oOffsets) */
     }
 
     cumulativeOffset (element) {

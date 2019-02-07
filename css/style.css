@@ -28,16 +28,10 @@ body {
     position: absolute;
     z-index: 1;
 }
-/* SMOOTH SCROLL FUNCIONA --> Pero no en Edge*/
+/* SMOOTH SCROLL FUNCIONA en Google Chrome y Firefox --> Pero no en Edge */
 html {
     scroll-behavior: smooth;
 }
-/* Menus 
-    .top-wrapper
-        .menu-icon
-        .menu-top
-    .menu-bottom
-*/
 section h1 {
     font-size: 5rem;
 }
