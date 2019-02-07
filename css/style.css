@@ -28,7 +28,7 @@ body {
     position: absolute;
     z-index: 1;
 }
-/* SMOOTH SCROLL FUNCIONA */
+/* SMOOTH SCROLL FUNCIONA --> Pero no en Edge*/
 html {
     scroll-behavior: smooth;
 }
@@ -60,25 +60,42 @@ nav a {
 nav.menu-icon {
     font-size: 1.4rem;
     cursor: pointer;
-    right: 20%;
+    right: 10%;
     top: 1rem;
-    /* font-weight: 800; */
+    position: fixed;
+    color: var(--color-fondo);
+}
+nav.menu-icon:hover {  /* a MODIFICAR SI SE REALIZA EN JS. */
+    color: var(--color-texto);
 }
 nav.menu-top {
     font-size: 1rem;
-    left: 2%;
+    right: 0%; 
     top: 3rem;
     font-weight: 800;  
     color: var(--color-texto);
-    background-color: var(--color-fondo);
-    width: 100%;
+    width: 30%; 
+    position: fixed;
+    z-index: 1;
+    background-color: var(--color-fondo);      
+    overflow-x: hidden;
+    transition: 1s;
 }
 nav.menu-bottom {
+    margin-top: 1rem;    
+    text-align: center;
     color: var(--color-texto);
     background-color: var(--color-fondo);
     background-size: cover;
-
+    width: 100%;
 }
+nav.menu-bottom a:hover {
+    background-color: #05FFEE;
+  }
+nav.menu-bottom li {
+    border-top: 1px solid var(--color-autores);
+}
+
 /* SECCIONES */ 
 /* HEADER interno con IMAGEN DE FONDO */
 section header {
@@ -208,7 +225,7 @@ section#contacto li {
 section#contacto li.form-group label {
     display: none;
 }
-/* ...CUIDADO CAMBIAR PARA 150 PALABRAS Y VERIFICACION EMAIL... */
+/* ...MODIFICAR PARA 150 PALABRAS Y VERIFICACION EMAIL... */
 section#contacto li.form-group input, 
 section#contacto li.form-group textarea {
     width: 100%;
