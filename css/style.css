@@ -28,6 +28,10 @@ body {
     position: absolute;
     z-index: 1;
 }
+/* SMOOTH SCROLL FUNCIONA */
+html {
+    scroll-behavior: smooth;
+}
 /* Menus 
     .top-wrapper
         .menu-icon
