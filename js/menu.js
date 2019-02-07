@@ -43,7 +43,6 @@ export class Menu {
         oE.target.classList.add('active')
     }
 
-
     changeMenuStyle () {
         let pageOffset = window.pageYOffset
         let menuItem = 0
@@ -55,8 +54,10 @@ export class Menu {
             menuItem = 2
         } else if (pageOffset >= this.oOffsets['#experiencia'] && pageOffset < this.oOffsets['#contacto']) {
             menuItem = 3
-        } else {
+        } else if (pageOffset >= this.oOffsets['#contacto']) {
             menuItem = 5
+        } else {
+            menuItem = 4
         }
          this.aMenuItems.forEach(
             (item) => item.classList.remove('active')

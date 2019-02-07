@@ -1,10 +1,10 @@
 /*  Variables Globales */
 :root {
-    --color-texto: black;
-    --color-fondo: white; 
-    --color-boton: darkblue;
-    --color-autores: lightblue;
-    --color-activo: cyan; 
+    --color-texto: #000000;
+    --color-fondo: #FFFFFF; 
+    --color-boton: #00008b;
+    --color-autores: #add8e6;
+    --color-activo: #00ffff; 
 }
 /* Elementos Genéricos */
 body { 
@@ -70,8 +70,10 @@ nav.menu-top {
     width: 100%;
 }
 nav.menu-bottom {
-    background-color: var(--color-autores);
-    background-size: cover; 
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    background-size: cover;
+
 }
 /* SECCIONES */ 
 /* HEADER interno con IMAGEN DE FONDO */
