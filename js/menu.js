@@ -10,19 +10,15 @@ export function setMenu() {
         let aSections = document.querySelectorAll("section")
 /* CODIGO VERIFICACION >>> console.dir(aSections)  */
         let oOffsets = []
-
         prepararNavegacion()
         window.addEventListener('scroll', changeMenuStyle)
         // Manejadores de eventos
-
         oBotonMenu1.addEventListener('click', toggleMenu.bind(this))
         oBotonMenu2.addEventListener('click', toggleMenu.bind(this))
         aMenuItems.forEach(
             (item) => { item.addEventListener('click', activarItem.bind(this))}
         )
 
-
-/* de aqui para abajo cambios */ 
 function toggleMenu(oE) {
     oE.preventDefault()
     // cambia su visibilidad
@@ -38,15 +34,12 @@ function toggleMenu(oE) {
 }
 
 function activarItem(oE) {
-    console.log('Activando Item')
+//    console.log('Activando Item')
     aMenuItems.forEach(
         (item) => { item.classList.remove('active')}
     )
     oE.target.classList.add('active')
 }
-
-/* de aqui para arriba cambios */
-
 
     function prepararNavegacion() {
         aSections.forEach(

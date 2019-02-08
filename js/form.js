@@ -1,34 +1,54 @@
 export function setForm() {
 
     let form = document.querySelector('#contacto')
-    let oContact = {}
-    form.addEventListener('submit', enviar)
+    let oInputName = document.querySelector('#name')
+    let oInputEmail = document.querySelector('#email')
+    let oInputPhone = document.querySelector('#phone')
+    let oTextMessage = document.querySelector('#message')
+    let oSelectSeleccion = document.querySelector('#selection')
 
-    function enviar() {
-        console.dir(oEv)
-        oEv.preventDefault()
-        oContact.name = document.querySelector('#name').value 
-        oContact.email = document.querySelector('#email').value
-        oContact.phone = document.querySelector('#phone').value
-        oContact.message = document.querySelector('#message').value
-        oContact.condiciones = document.querySelector('#condiciones').checked
-        oContact.opciones = getRadio( document.querySelectorAll('[name="opciones"]'))
-        oContact.selection = getSelector(document.querySelector('#selection'))
-
-        console.log(oContact)
+    let oData = {
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        seleccion: ''
     }
+    form.addEventListener('submit', leerContact) 
+    //definirValidaciones()
 
-    function getRadio(aNodos) {
-        console.dir(aNodos)
-        for (let i = 0; i < aNodos.length; i++) {
-            const item = aNodos[i]
-            if (item.checked) {return item.value}
+    function leerContact(oE) {
+        oE.preventDefault()
+        if (validar()) {
+            guardarDatos()
         }
     }
+
+    function guardarDatos() {
+        oData = {
+            name:  oInputName.value,
+            email: oInputEmail.value ,
+            phone: oInputPhone.value,
+            message: oTextMessage.value,
+            seleccion: oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value
+        }
+    console.dir(oData)
+    }
+
     function getSelector(nodo) {
         let i = nodo.selectedIndex
         return nodo[i].value
     }
 
+    function definirValidaciones() {
+        oInputName.setCustomValidity('El nombre es obligatorio')
+        console.dir(oInputName.validity)
+        console.dir(oInputEmail.validity)
+
+    }
+
+    function validar() {
+        return true
+    }
 
 }
