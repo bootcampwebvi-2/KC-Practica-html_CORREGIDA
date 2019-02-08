@@ -8,27 +8,51 @@ export function setMenu() {
         // Otros
         let aMenuItems = document.querySelectorAll("nav#menu-top a")
         let aSections = document.querySelectorAll("section")
-/* CODIGO VERIFICACION >>> */ console.dir(aSections) 
+/* CODIGO VERIFICACION >>> console.dir(aSections)  */
         let oOffsets = []
 
         prepararNavegacion()
         window.addEventListener('scroll', changeMenuStyle)
         // Manejadores de eventos
-/*         this.oBotonMenu1.addEventListener('click', this.toggleMenu.bind(this))
-        this.oBotonMenu2.addEventListener('click', this.toggleMenu.bind(this))
-        this.aMenuItems.forEach(
-            (item) => { item.addEventListener('click', this.activarItem.bind(this))}
-        )
-        window.addEventListener('scroll', this.changeMenuStyle.bind(this))
 
-        prepararNavegacion() */
+        oBotonMenu1.addEventListener('click', toggleMenu.bind(this))
+        oBotonMenu2.addEventListener('click', toggleMenu.bind(this))
+        aMenuItems.forEach(
+            (item) => { item.addEventListener('click', activarItem.bind(this))}
+        )
+
+
+/* de aqui para abajo cambios */ 
+function toggleMenu(oE) {
+    oE.preventDefault()
+    // cambia su visibilidad
+    oE.target.classList.toggle('hide')
+    // cambia la visibilidad del otro icono
+    if (oE.target.previousElementSibling) {
+        oE.target.previousElementSibling.classList.toggle('hide')
+    } else {
+        oE.target.nextElementSibling.classList.toggle('hide')
+    }
+     // cambia la visibilidad del menu top para mobile
+    oMenuTop.classList.toggle('hide')
+}
+
+function activarItem(oE) {
+    console.log('Activando Item')
+    aMenuItems.forEach(
+        (item) => { item.classList.remove('active')}
+    )
+    oE.target.classList.add('active')
+}
+
+/* de aqui para arriba cambios */
 
 
     function prepararNavegacion() {
         aSections.forEach(
             (item) => oOffsets['#'+item.id] = item.offsetTop
         )
-        console.log(oOffsets)    
+/* CODIGO VERIFICACION >>>  console.log(oOffsets) */   
     }
 
     function changeMenuStyle () {
