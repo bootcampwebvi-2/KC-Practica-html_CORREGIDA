@@ -1,5 +1,4 @@
 export function setForm() {
-
     let form = document.querySelector('#contacto')
     let oInputName = document.querySelector('#name')
     let oInputEmail = document.querySelector('#email')
@@ -11,11 +10,15 @@ export function setForm() {
         email: '',
         phone: '',
         message: '',
-        seleccion: '',
-        test:''
+        seleccion: ''
     }
-    form.addEventListener('submit', leerContact) 
-     definirValidaciones()
+
+   form.addEventListener('submit', leerContact)
+   // validacionNombre() 
+   validacionEmail()
+   validacionPhone()
+   // validacionMessage()
+   // validacionseleccion()
 
     function leerContact(oE) {
         oE.preventDefault()
@@ -34,31 +37,39 @@ export function setForm() {
         }
     console.dir(oData)
     }
-    /*
-    function getSelector(nodo) {
+
+/* function getSelector(nodo) {
         let i = nodo.selectedIndex
         return nodo[i].value
-    }
-    */
+    } */
 
-/* TEST */
-
-function definirValidaciones() {
-    let email = document.querySelector('#email')
-    console.log(email)
-    
+/* FUNCION DE VALIDACION DE EMAIL CORRECTA */
+    function validacionEmail() {
+        let email = document.querySelector('#email')
             email.addEventListener("keyup", function (event) {
             if (email.validity.typeMismatch) {
-                email.setCustomValidity("Por favor introduzca una dirección de correo valida");
-            }   else {
+                email.setCustomValidity("Por favor, introduzca una dirección de correo valida");
+                }   else {
                 email.setCustomValidity("");
+// VERIFICACION >>> console.dir(email.validity)
                 }
-            console.log(oInputPhone.validity);
             })
-        }
+} 
 
+/* FUNCION DE VALIDACION DE PHONE CORRECTA */
+function validacionPhone() {
+    let phone = document.querySelector('#phone');
+    phone.addEventListener("keyup", function (event) {
+        if (isNaN(phone.value)) {
+// VERIFICACION >>> console.log ("Not OK");
+            phone.setCustomValidity("Por favor, introduzca un numero de telefono válido, solo numeros");
+        }   else {
+            phone.setCustomValidity("");
+// VERIFICACION >>> console.log ("OK para un numero");         
+        } 
+    }) 
+}
     function validar() {
         return true
     }
-
 }
