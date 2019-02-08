@@ -6,16 +6,16 @@ export function setForm() {
     let oInputPhone = document.querySelector('#phone')
     let oTextMessage = document.querySelector('#message')
     let oSelectSeleccion = document.querySelector('#selection')
-
     let oData = {
         name: '',
         email: '',
         phone: '',
         message: '',
-        seleccion: ''
+        seleccion: '',
+        test:''
     }
     form.addEventListener('submit', leerContact) 
-    //definirValidaciones()
+     definirValidaciones()
 
     function leerContact(oE) {
         oE.preventDefault()
@@ -34,18 +34,28 @@ export function setForm() {
         }
     console.dir(oData)
     }
-
+    /*
     function getSelector(nodo) {
         let i = nodo.selectedIndex
         return nodo[i].value
     }
+    */
 
-    function definirValidaciones() {
-        oInputName.setCustomValidity('El nombre es obligatorio')
-        console.dir(oInputName.validity)
-        console.dir(oInputEmail.validity)
+/* TEST */
 
-    }
+function definirValidaciones() {
+    let email = document.querySelector('#email')
+    console.log(email)
+    
+            email.addEventListener("keyup", function (event) {
+            if (email.validity.typeMismatch) {
+                email.setCustomValidity("Por favor introduzca una dirección de correo valida");
+            }   else {
+                email.setCustomValidity("");
+                }
+            console.log(oInputPhone.validity);
+            })
+        }
 
     function validar() {
         return true
