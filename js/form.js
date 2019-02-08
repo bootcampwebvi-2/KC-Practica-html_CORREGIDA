@@ -10,19 +10,19 @@ export function setForm() {
         email: '',
         phone: '',
         message: '',
-        seleccion: ''
+        seleccion: '',
     }
 
    form.addEventListener('submit', leerContact)
-   // validacionNombre() 
    validacionEmail()
    validacionPhone()
    // validacionMessage()
-   // validacionseleccion()
+   validacionseleccion()
 
-    function leerContact(oE) {
+   function leerContact(oE) {
         oE.preventDefault()
         if (validar()) {
+
             guardarDatos()
         }
     }
@@ -34,14 +34,13 @@ export function setForm() {
             phone: oInputPhone.value,
             message: oTextMessage.value,
             seleccion: oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value
-        }
+        }     
+    if (oData.seleccion == 'op5'){
+        oData.output = "op5_texto";
+  
+    } 
     console.dir(oData)
     }
-
-/* function getSelector(nodo) {
-        let i = nodo.selectedIndex
-        return nodo[i].value
-    } */
 
 /* FUNCION DE VALIDACION DE EMAIL CORRECTA */
     function validacionEmail() {
@@ -51,7 +50,7 @@ export function setForm() {
                 email.setCustomValidity("Por favor, introduzca una dirección de correo valida");
                 }   else {
                 email.setCustomValidity("");
-// VERIFICACION >>> console.dir(email.validity)
+// verificacion >>> console.dir(email.validity)
                 }
             })
 } 
@@ -61,14 +60,32 @@ function validacionPhone() {
     let phone = document.querySelector('#phone');
     phone.addEventListener("keyup", function (event) {
         if (isNaN(phone.value)) {
-// VERIFICACION >>> console.log ("Not OK");
+// verificacion >>> console.log ("Not OK");
             phone.setCustomValidity("Por favor, introduzca un numero de telefono válido, solo numeros");
         }   else {
             phone.setCustomValidity("");
-// VERIFICACION >>> console.log ("OK para un numero");         
+// verificacion >>> console.log ("OK para un numero");         
         } 
     }) 
 }
+
+/* FUNCION DE VALIDACION DE SELECCION CORRECTA */
+function validacionseleccion() {
+    let valselection = oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value; 
+    let msg;
+    console.log(valselection);
+        if (valselection == "op5") {
+       msg = '<textarea name="output" id="output" cols="30" rows="10" placeholder="Mensaje"></textarea>';
+       output.innerHTML = msg;
+
+// verificacion >>> 
+        console.log ("OK para op5");
+        }   else {
+// verificacion >>> 
+        console.log ("OK para las otras opciones");         
+        }
+}
+
     function validar() {
         return true
     }
