@@ -1,5 +1,5 @@
-import {Index} from './index.js'
-import {Page1} from './page1.js'
+import { Index } from './index.js'
+import  { Page1 } from './page1.js'
 
 /**
  * @class Main

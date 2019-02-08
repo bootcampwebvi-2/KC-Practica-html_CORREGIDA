@@ -1,14 +1,9 @@
-import  { Main } from './main.js'
+import { setMenu } from './menu.js'
+import { setForm } from './form.js'
 
-/**
- * 
- * Fucnción autoejecutada: patrón IIEF
- * que actua como cargador de la aplicación, 
- * instanciando el objeto Main (Router)
- * 
- */
+function app() {
+    setMenu()
+    setForm()
+}
 
-(function() {
-    window.addEventListener("load", 
-    () => { new Main()})
-})()
+document.addEventListener('DOMContentLoaded', app)

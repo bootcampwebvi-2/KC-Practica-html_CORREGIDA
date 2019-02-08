@@ -1,6 +1,3 @@
-import { Menu } from './menu.js'
-// import { FormContact } from './form-contact.js'
-
 
 /**
  * @class Index
