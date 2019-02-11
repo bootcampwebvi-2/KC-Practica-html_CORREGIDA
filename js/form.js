@@ -19,12 +19,12 @@ export function setForm() {
    form.addEventListener('submit', leerContact)
    validacionEmail()
    validacionPhone()
-   validacionMessage()
    validacionseleccion()
 
     function leerContact(oE) {
         oE.preventDefault()
         if (validar()) {
+            validacionMessage()
             guardarDatos()
         } 
     } 
@@ -73,6 +73,8 @@ export function setForm() {
 
 /* FUNCION DE VALIDACION DE MENSAJE CORRECTA */
     function validacionMessage() {
+        console.log(oTextMessage1.value);
+        
     return true
 }
 
