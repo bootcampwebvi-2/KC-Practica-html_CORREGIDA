@@ -19,7 +19,7 @@ export function setForm() {
    form.addEventListener('submit', leerContact)
    validacionEmail()
    validacionPhone()
-   // validacionMessage()
+   validacionMessage()
    validacionseleccion()
 
     function leerContact(oE) {
@@ -36,7 +36,7 @@ export function setForm() {
             phone: oInputPhone.value,
             message1: oTextMessage1.value,
             seleccion: oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value,
-            message2: oTextMessage2.value
+            message2: oTextMessage2.childNodes[0].value,
         }     
     console.dir(oData)
     }
@@ -66,20 +66,25 @@ function validacionPhone() {
     }) 
 }
 
+/* FUNCION DE VALIDACION DE MENSAJE CORRECTA */
+function validacionMessage() {
+    return true
+}
+
 /* FUNCION DE VALIDACION DE SELECCION CORRECTA */
 function validacionseleccion() {
-    let valselection = oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value;
     let msg;
-    console.log(valselection);
     oSelectSeleccion.addEventListener("change", function (event) {
         if (oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value == "op5") {
-            console.log("Opcion 5");
-            msg = '<textarea name="output" id="output" cols="30" rows="10" placeholder="Mensaje"></textarea>';
+// verificacion  console.log("Opcion 5");
+            msg = '<input type="text" id="output"></input>'
+// Otra manera de introducir texto >>> msg = '<textarea name="output" id="myInput" cols="20" rows="1" placeholder="Mensaje"></textarea>';
             output.innerHTML = msg;
        } else {
-        // verificacion >>> console.log ("OK para las otras opciones");   
+        // Verificacion
+        console.log ("OK para las otras opciones");   
         }
-     })    
+     }) 
     }
 
 /* FUNCION VALIDAR */
