@@ -19,12 +19,12 @@ export function setForm() {
    form.addEventListener('submit', leerContact)
    validacionEmail()
    validacionPhone()
+   // validacionMessage()
    validacionseleccion()
 
     function leerContact(oE) {
         oE.preventDefault()
         if (validar()) {
-            validacionMessage()
             guardarDatos()
         } 
     } 
@@ -34,7 +34,7 @@ export function setForm() {
             name:  oInputName.value,
             email: oInputEmail.value ,
             phone: oInputPhone.value,
-            message1: oTextMessage1.value,
+// message1: oTextMessage1.value, --> Mensaje completo del textArea, y limitado a 150 palabras en Message3
             seleccion: oSelectSeleccion.options[oSelectSeleccion.selectedIndex].value,
         }
 // verificacion >>>  console.log (oTextMessage2.value)
@@ -42,6 +42,21 @@ export function setForm() {
             oData.message2 = oTextMessage2.value;
         } else {
             oData.message2 = oTextMessage2.childNodes[0].value;
+        }
+
+/* GUARDA LOS DATOS en MESSAGE3, las 150 primeras palabras de MESSAGE1 */
+        {
+            var resultArray =[];
+            var str = oTextMessage1.value.replace(/[\t\n\r\.\?\!]/gm,' ');
+            var wordArray = str.split(" ");
+    
+            for (var i = 0; i < wordArray.length; i++) {
+              var item = wordArray[i].trim();
+              if (item.length > 0) {
+                    resultArray.push(item);        
+                }
+            }
+            oData.message3 = resultArray.slice(0,5);
         }
     console.dir(oData)
     }
@@ -53,7 +68,7 @@ export function setForm() {
                 oInputEmail.setCustomValidity("Por favor, introduzca una dirección de correo valida");
                 }   else {
                     oInputEmail.setCustomValidity("");
- //verificacion >>> console.dir(oInputEmail.validity);
+//verificacion >>> console.dir(oInputEmail.validity);
                 }
             })
 } 
@@ -66,16 +81,9 @@ export function setForm() {
             oInputPhone.setCustomValidity("Por favor, introduzca un numero de telefono válido, solo numeros");
         }   else {
             oInputPhone.setCustomValidity("");
-//verificacion >>> console.log ("OK para un numero");         
+//verificacion >>> console.log ("OK para numeros");         
         } 
     }) 
-}
-
-/* FUNCION DE VALIDACION DE MENSAJE CORRECTA */
-    function validacionMessage() {
-        console.log(oTextMessage1.value);
-        
-    return true
 }
 
 /* FUNCION DE VALIDACION DE SELECCION CORRECTA */
