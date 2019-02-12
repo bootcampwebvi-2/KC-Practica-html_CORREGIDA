@@ -56,7 +56,7 @@ export function setForm() {
                     resultArray.push(item);        
                 }
             }
-            oData.message3 = resultArray.slice(0,5);
+            oData.message3 = resultArray.slice(0,150);
         }
     console.dir(oData)
     }
