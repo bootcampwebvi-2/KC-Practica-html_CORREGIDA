@@ -103,7 +103,7 @@ section header {
 section#home header {
     margin-left: -100px;    
     background-position: left;
-    background-image: url('../assets/home-bg.jpg'); 
+    background-image: url('../assets/Home-bg.jpg'); 
 }
 section#quiensoy header{
     background-image: url('../assets/quiensoy.jpg');
